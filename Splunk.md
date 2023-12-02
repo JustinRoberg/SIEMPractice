@@ -40,6 +40,7 @@
 ## Tools Used
 
 </Summary>
+
   <Details Open><Summary>
     
   ### Code/Commands
@@ -56,7 +57,7 @@
   
   [Further Reference}(https://docs.splunk.com/Documentation/Splunk/9.0.2/SearchReference/UnderstandingSPLsyntax)
     
-    </Details>
+  </Details>
 
   <Details Open><Summary>
     
