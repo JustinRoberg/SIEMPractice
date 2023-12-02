@@ -55,7 +55,7 @@
   
   `*` - **Wildcard** - Used to match characters in string values, useful in Splunk to find data that is similar but not identical.
   
-  [Further Reference}(https://docs.splunk.com/Documentation/Splunk/9.0.2/SearchReference/UnderstandingSPLsyntax)
+  [Further Reference](https://docs.splunk.com/Documentation/Splunk/9.0.2/SearchReference/UnderstandingSPLsyntax)
     
   </Details>
 
