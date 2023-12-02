@@ -202,7 +202,11 @@ Assets that accessed the domain:
 
 Timeline of HTTP requests including `GET` and `POST`
 
+The `Post` requests to `/login.php` could indicate the transfer of login information.
+
 <img width="450" alt="5_2a" src="https://github.com/JustinRoberg/SIEMPractice/assets/133618188/1477a867-2192-464f-824e-c26745759f32">
+
+Raw log viewer can give more details about each of the connections:
 
 
 <img width="900" alt="5_2b" src="https://github.com/JustinRoberg/SIEMPractice/assets/133618188/0acde163-f839-4763-b78f-078f680127c4">
@@ -217,20 +221,27 @@ Timeline of HTTP requests including `GET` and `POST`
 
   </Summary>
 
+  Based on the affected assets, and `POST` requests the domain is most likely malicious. Next I will investigate the IP address found under the **Resolved IPS** to identify if there are other domains being used.
   
 <img width="450" alt="Chronicle6_1a" src="https://github.com/JustinRoberg/SIEMPractice/assets/133618188/e60ac1a4-de1e-461b-a2dd-341699a33551">
 
+Under **RESOLVED IPS** the address `40.100.174.34` can be selected. 
 
 <img width="900" alt="Chronicle6_2a" src="https://github.com/JustinRoberg/SIEMPractice/assets/133618188/cd23759f-5cb0-4f95-9101-856454bf19df">
 
+After selecting the address, a timeline of requests can be seen. `POST` requests may indicate an asset has be phished. These are worth noting.
 
 <img width="450" alt="Chronicle6_2a1" src="https://github.com/JustinRoberg/SIEMPractice/assets/133618188/cbacd021-71e7-4810-b070-18061f258d4c">
 
+We can also see additionally affected assets.
 
 <img width="450" alt="Chronicle6_2b" src="https://github.com/JustinRoberg/SIEMPractice/assets/133618188/b93a4cbb-bf8e-4eae-8185-49c6917fe1a5">
 
+Listed are other domains associated with the IP address.
 
 <img width="450" alt="Chronicle 6_2c" src="https://github.com/JustinRoberg/SIEMPractice/assets/133618188/d8aaaaec-040d-44f7-9935-a900a9007150">
+
+A mock incident journal was created along with this lab and will be uploaded eventually.
 
 </details>
 
@@ -244,15 +255,16 @@ Timeline of HTTP requests including `GET` and `POST`
  In this Lab I used Chronicle to:
  
    * Access threat intelligence reports on the domain
-
+         - Determined the behavior of `signin.office365x24.com` as  drop site for logs and stolen credentials. According to ET Intelligence Rep List
    * Identify the assets that accessed the domain
-
+         - `roger-spence-pc`, `emil-palmer-pc`, `coral-alverez-pc`, `ashton-davidson-pc`, `jude-res-pc`,`bruce-monroe-pc`, are assets that accessed domain
    * Evaluate the HTTP events associated with the domain
-
+         - Two `POST` requests were made to the do the domain. Indicating the submission of sensitive data.
    * Identify which assets submitted login information to the domain
-
+         - `ashton-davidson-pc`, `emil-palmer-pc` submitted login information.
    * Identify additional domains 
-
+         - `40.100.174.34` resolves to `signin.office365x24.com` as well as `signin.accounts-google.com`
+     
 After investigating the suspicious domain, I determined that it was involved in phishing campaigns. I also determined via Post requests to the domain, that login information had been submitted to the domain. I also identified two domains that were also related to the domain that I was investigating. 
 
 </Details>
